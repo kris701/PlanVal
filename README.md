@@ -15,6 +15,12 @@
 # PlanVal
 
 This is a simple project, that can take in a domain+problem file as well as a plan file in the [Fast Downward](https://www.fast-downward.org/) format, and validate if it is a correct plan or not.
+You can use the CLI tool as follows:
+```
+dotnet run --domain domain.pddl --problem problem.pddl --plan plan.plan
+```
+
+Or you can find PlanVal as a package on the [NuGet Package Manager](https://www.nuget.org/packages/PlanVal).
 
 ## Examples
 ```csharp
