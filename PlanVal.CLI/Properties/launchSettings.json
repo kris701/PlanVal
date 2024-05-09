@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PlanVal.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "--domain ../../../../Dependencies/downward-benchmarks/gripper/domain.pddl --problem ../../../../Dependencies/downward-benchmarks/gripper/prob01.pddl --plan ../../../../Dependencies/PDDLBenchmarkPlans/lama-first/gripper/prob01.plan"
+    }
+  }
+}
