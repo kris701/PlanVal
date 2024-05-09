@@ -1,3 +1,17 @@
+
+<p align="center">
+    <img src="https://github.com/kris701/PlanVal/assets/22596587/3ae337c0-c3f7-401c-bb9c-61876c85e8ea" width="200" height="200" />
+</p>
+
+[![Build and Publish](https://github.com/kris701/PlanVal/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/kris701/PlanVal/actions/workflows/dotnet-desktop.yml)
+![Nuget](https://img.shields.io/nuget/v/PlanVal)
+![Nuget](https://img.shields.io/nuget/dt/PlanVal)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/kris701/PlanVal/main)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/kris701/PlanVal)
+![Static Badge](https://img.shields.io/badge/Platform-Windows-blue)
+![Static Badge](https://img.shields.io/badge/Platform-Linux-blue)
+![Static Badge](https://img.shields.io/badge/Framework-dotnet--8.0-green)
+
 # PlanVal
 
 This is a simple project, that can take in a domain+problem file as well as a plan file in the [Fast Downward](https://www.fast-downward.org/) format, and validate if it is a correct plan or not.
