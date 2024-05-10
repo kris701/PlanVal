@@ -4,16 +4,31 @@ using PDDLSharp.ErrorListeners;
 using PDDLSharp.Models.PDDL;
 using PDDLSharp.Models.PDDL.Domain;
 using PDDLSharp.Models.PDDL.Expressions;
-using PDDLSharp.StateSpaces.PDDL;
 
 namespace PlanVal
 {
+    /// <summary>
+    /// A small simulator to simulate PDDL action executions
+    /// </summary>
     public class StateSpaceSimulator
     {
+        /// <summary>
+        /// The current <seealso cref="PDDLDecl"/> that is simulated on
+        /// </summary>
         public PDDLDecl Declaration { get; internal set; }
+        /// <summary>
+        /// An object representing the state
+        /// </summary>
         public PDDLStateSpace State { get; internal set; }
+        /// <summary>
+        /// The current cost of the simulated run
+        /// </summary>
         public int Cost { get; internal set; } = 0;
 
+        /// <summary>
+        /// Main constructor
+        /// </summary>
+        /// <param name="declaration"></param>
         public StateSpaceSimulator(PDDLDecl declaration)
         {
             Declaration = declaration;
@@ -27,14 +42,26 @@ namespace PlanVal
             State = new PDDLStateSpace(declaration);
         }
 
+        /// <summary>
+        /// Set the cost to zero and reset the state space object.
+        /// </summary>
         public void Reset()
         {
             Cost = 0;
             State = new PDDLStateSpace(Declaration);
         }
 
+        /// <summary>
+        /// Execute a action by name with a set of arguments
+        /// </summary>
+        /// <param name="actionName"></param>
+        /// <param name="arguments"></param>
         public void Step(string actionName, params string[] arguments) => Step(actionName, GetNameExpFromString(arguments));
 
+        /// <summary>
+        /// Execute a action by name with no arguments.
+        /// </summary>
+        /// <param name="actionName"></param>
         public void Step(string actionName) => Step(actionName, new List<NameExp>());
 
         private void Step(string actionName, List<NameExp> arguments)

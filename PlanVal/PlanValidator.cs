@@ -3,15 +3,26 @@ using PDDLSharp.Models.PDDL;
 
 namespace PlanVal
 {
+    /// <summary>
+    /// Class object for the plan validator
+    /// </summary>
     public class PlanValidator
     {
+        /// <summary>
+        /// A number representing what step of the plan was executed last.
+        /// </summary>
         public int Step { get; internal set; }
+        /// <summary>
+        /// If some validation error occured, it will be shown here.
+        /// </summary>
         public string ValidationError { get; internal set; } = "";
 
-        public PlanValidator()
-        {
-        }
-
+        /// <summary>
+        /// Validate a <seealso cref="ActionPlan"/> on a <seealso cref="PDDLDecl"/>.
+        /// </summary>
+        /// <param name="plan"></param>
+        /// <param name="decl"></param>
+        /// <returns>True if plan is valid, false otherwise</returns>
         public bool Validate(ActionPlan plan, PDDLDecl decl)
         {
             Step = 0;
