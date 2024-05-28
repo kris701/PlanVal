@@ -39,7 +39,10 @@ namespace PlanVal
                     simulator.Step(step.ActionName, argStr.ToArray());
                     Step++;
                 }
-                return simulator.State.IsInGoal();
+                var isInGoal = simulator.State.IsInGoal();
+                if (!isInGoal)
+                    ValidationError = "Does not result in goal!";
+                return isInGoal;
             }
             catch (Exception ex)
             {
