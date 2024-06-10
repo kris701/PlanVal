@@ -44,7 +44,10 @@ namespace PlanVal.CLI
             if (result)
                 Console.WriteLine("== PLAN IS VALID ==");
             else
+            {
                 Console.WriteLine("== PLAN IS INVALID ==");
+                Console.WriteLine($"Reason: {validator.ValidationError}");
+            }
         }
 
         private static void HandleParseError(IEnumerable<Error> errs)

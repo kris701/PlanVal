@@ -72,12 +72,12 @@ namespace PlanVal
             targetAction.RemoveContext();
 
             if (targetAction.Parameters.Values.Count != arguments.Count)
-                throw new ArgumentOutOfRangeException($"Action takes '{targetAction.Parameters.Values.Count}' arguments, but was given '{arguments.Count}'");
+                throw new ArgumentOutOfRangeException($"Action '{targetAction.Name}' takes '{targetAction.Parameters.Values.Count}' arguments, but was given '{arguments.Count}'");
 
             targetAction = GroundAction(targetAction, arguments);
 
             if (!State.IsNodeTrue(targetAction.Preconditions))
-                throw new ArgumentException("Not all precondition predicates are set!");
+                throw new ArgumentException($"Not all precondition predicates are set for the target action '{targetAction.Name}'!");
 
             State.ExecuteNode(targetAction.Effects);
 

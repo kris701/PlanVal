@@ -41,12 +41,12 @@ namespace PlanVal
                 }
                 var isInGoal = simulator.State.IsInGoal();
                 if (!isInGoal)
-                    ValidationError = "Does not result in goal!";
+                    ValidationError = $"[Step {Step}] Does not result in goal!";
                 return isInGoal;
             }
             catch (Exception ex)
             {
-                ValidationError = ex.Message;
+                ValidationError = $"[Step {Step}] {ex.Message}";
                 return false;
             }
         }
